@@ -1,0 +1,80 @@
+<mat-toolbar color="primary">
+  Sign Up
+</mat-toolbar>
+
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <div class="inputGroup">
+      <mat-form-field>
+        <mat-label>First name</mat-label>
+        <input type="text" matInput formControlName="firstName" placeholder="First name">
+        <mat-error *ngIf="signUpForm.controls.firstName.status==='INVALID'">
+          First name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input type="text" matInput formControlName="lastName" placeholder="Last name">
+        <mat-error *ngIf="signUpForm.controls.firstName.status==='INVALID'">
+          Last name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+  </div>
+
+  <div class="input-group age">
+    <div class="genderSelectGroup">
+      <label>Gender:</label>
+        <mat-radio-group
+        class="genderRadioGroup"
+        formControlName = "gender"
+        aria-label="Select an option">
+          <mat-radio-button value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female">Female</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div class="ageInputGroup">
+      <label class="ageLabel" for="Age">Age</label>
+      <mat-form-field class="ageInput">
+        <input type="number" matInput min="10" max="100" formControlName = "age" >
+      </mat-form-field>
+    </div>
+  </div>
+  
+    <div class="inputGroup">
+    <mat-form-field class="emailInputGroup">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" placeholder="user@example.com">
+      <mat-error *ngIf="signUpForm.controls.email.value.length===0">
+        Email is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="signUpForm.controls.email.errors?.email===true && signUpForm.controls.email.value.length>0">
+        Please enter a <strong>valid</strong> email address
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="inputGroup">
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" placeholder="First name">
+      <mat-error *ngIf="signUpForm.controls.password.status==='INVALID'">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Confirm Password</mat-label>
+      <input type="password" matInput formControlName="repeatPassword" placeholder="Last name">
+      <mat-error *ngIf="signUpForm.controls.repeatPassword.status==='INVALID'">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-error class="passMatch" *ngIf="signUpForm.errors?.passwordMatches && (signUpForm.touched || signUpForm.dirty)">
+      Those passwords didn't match. Try again.
+    </mat-error>
+</div>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="!signUpForm.valid">Sign Up</button>
+</form>
+<button></button>

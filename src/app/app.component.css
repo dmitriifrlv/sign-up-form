@@ -1,0 +1,29 @@
+main{
+  background: linear-gradient(-45deg, rgba(128,123,113,1) 0%, rgba(189,184,169,1) 65%);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card{
+  width: 50vw;
+  /* min-height: 30vh; */
+  height: fit-content;
+  padding: 0;
+}
+
+@media (max-width: 768px) { 
+  mat-card{
+    width: 60vw;
+    max-height: 60vh;
+  }
+ }
+
+ @media (max-width: 414px) { 
+  mat-card{
+    width: 80vw;
+    max-height: 89vh;
+  }
+ }

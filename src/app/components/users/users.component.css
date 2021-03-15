@@ -1,0 +1,11 @@
+.usersContainer{
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: auto;
+}
+.usersList{
+  overflow-y: auto;
+}
