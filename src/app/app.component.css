@@ -10,6 +10,7 @@ main{
 mat-card{
   width: 50vw;
   height: fit-content;
+  max-height: 80vh;
   padding: 0;
   overflow: auto;
 }
