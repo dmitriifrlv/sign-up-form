@@ -9,3 +9,6 @@
 .usersList{
   overflow-y: auto;
 }
+button{
+  margin-top: 1rem;
+}
