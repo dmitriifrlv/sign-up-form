@@ -12,3 +12,7 @@
 button{
   margin-top: 1rem;
 }
+mat-toolbar{
+  position: sticky;
+  top:0
+}

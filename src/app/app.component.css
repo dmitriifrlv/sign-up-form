@@ -11,6 +11,7 @@ mat-card{
   width: 50vw;
   height: fit-content;
   padding: 0;
+  overflow: auto;
 }
 
 @media (max-width: 768px) { 
